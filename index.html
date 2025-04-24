@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tannu Kumari Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .typing::after {
+        content: "|";
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-gray-200 scroll-smooth">
+    <!-- Navbar -->
+    <header
+      class="fixed w-full bg-gray-800 bg-opacity-95 backdrop-blur shadow-sm z-10"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-semibold text-green-400">Tannu Kumari</h1>
+        <nav class="space-x-3 text-base">
+          <a
+            href="#about"
+            class="hover:cursor-pointer text-xl hover:text-green-400"
+            >About</a
+          >
+          <a
+            href="#experience"
+            class="hover:cursor-pointer text-xl hover:text-green-400"
+            >Experience</a
+          >
+          <a
+            href="#education"
+            class="hover:cursor-pointer text-xl hover:text-green-400"
+            >Education</a
+          >
+          <a
+            href="#skills"
+            class="hover:cursor-pointer text-xl hover:text-green-400"
+            >Skills</a
+          >
+          <a
+            href="#resume"
+            class="hover:cursor-pointer text-xl hover:text-green-400"
+            >Resume</a
+          >
+          <a
+            href="#contact"
+            class="hover:cursor-pointer text-xl hover:text-green-400"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section class="py-20 bg-gray-800">
+        <div
+          class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-6 px-4"
+        >
+          <!-- Text Section -->
+          <div class="text-center md:text-left md:w-auto md:mr-6">
+            <h2 class="text-3xl font-bold mb-4 text-green-300 mt-6 md:mt-14">
+              <span id="typed-text" class="typing"></span>
+            </h2>
+            <p class="text-lg text-gray-300">
+              Master’s Student in Biotechnology | Focused on Agriculture &
+              Environmental Sustainability
+            </p>
+          </div>
+
+          <!-- Image Section -->
+          <div class="flex justify-center md:justify-end">
+            <img
+              src="pic.jpg"
+              alt="Tannu Kumari Profile"
+              class="w-56 h-56 rounded-full object-cover border-4 border-green-400 shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-16 px-4 max-w-4xl mx-auto">
+        <h3 class="text-2xl font-semibold mb-4 text-green-300">About Me</h3>
+        <p class="text-gray-300">
+          I am pursuing my Master’s in Biotechnology at UWA, specializing in
+          agriculture and environmental sustainability. With a strong foundation
+          in lab techniques, research, and data analysis, I aim to apply
+          biotechnological innovations to enhance agricultural productivity and
+          sustainability. My passion lies in advancing agricultural practices
+          through biotechnology to address global challenges like food security
+          and climate change. I’m excited about opportunities to contribute to
+          research and fieldwork that make a real-world impact.
+        </p>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="py-16 px-4 bg-gray-800">
+        <div class="max-w-4xl mx-auto">
+          <h3 class="text-2xl font-semibold mb-6 text-green-300">Experience</h3>
+          <div class="space-y-6">
+            <div>
+              <h4 class="text-xl font-bold text-green-200">
+                Food and Beverage Attendant
+              </h4>
+              <p class="text-gray-300">
+                <strong>Virgin Australia</strong> | Perth, WA<br />
+                Oct 2023 – Present<br />
+                Developed problem-solving, teamwork, and communication skills in
+                a high-paced environment.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-green-200">Sergeant</h4>
+              <p class="text-gray-300">
+                <strong>National Cadet Corps, India</strong> | Hyderabad,
+                India<br />
+                Jul 2019 – Jun 2022<br />
+                Led teams, coordinated events, trained junior cadets, and
+                promoted campaigns on social media. Gained leadership,
+                communication, and organizational skills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+          <h3 class="text-2xl font-semibold mb-4 text-green-300">Education</h3>
+          <div class="mb-6">
+            <h4 class="text-xl font-bold text-green-200">
+              University of Western Australia
+            </h4>
+            <p class="text-gray-300">
+              Master’s in Biotechnology (Agriculture & Environmental Science)<br />
+              Jul 2023 – 2025
+            </p>
+            <ul class="list-disc list-inside text-gray-400">
+              <li>Food Fiber and Fuel Security</li>
+              <li>Techniques in Molecular Sciences</li>
+              <li>Big Data in Biology</li>
+              <li>Technology Commercialisation</li>
+              <li>Environmental BioSensing & Circular Economy</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-green-200">
+              Osmania University, Hyderabad
+            </h4>
+            <p class="text-gray-300">
+              Bachelor’s in Life Sciences<br />
+              Jan 2020 – Aug 2022
+            </p>
+            <ul class="list-disc list-inside text-gray-400">
+              <li>Advanced Genetic Engineering</li>
+              <li>Animal & Plant Biotechnology</li>
+              <li>Green Chemistry, Fermentation Tech</li>
+              <li>Research in Molecular Biology & Spectroscopy</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-16 px-4 bg-gray-800">
+        <div class="max-w-4xl mx-auto">
+          <h3 class="text-2xl font-semibold mb-4 text-green-300">Skills</h3>
+          <ul
+            class="list-disc list-inside text-gray-300 grid grid-cols-2 gap-x-8"
+          >
+            <li>Polymerase Chain Reaction (PCR)</li>
+            <li>Agarose Gel Electrophoresis</li>
+            <li>Bioinformatics & Data Analysis</li>
+            <li>DNA Cloning & Transformation</li>
+            <li>Plant Tissue Culture</li>
+            <li>Teamwork & Communication</li>
+            <li>Problem Solving & Detail Orientation</li>
+            <li>Customer Service & Presentation Skills</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Resume Section -->
+      <section id="resume" class="py-16 px-4 text-center">
+        <h3 class="text-2xl font-semibold mb-4 text-green-300">Resume</h3>
+        <a
+          href="resume.pdf"
+          target="_blank"
+          class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition shadow"
+          >Download Resume</a
+        >
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-16 px-4 max-w-4xl mx-auto">
+        <h3 class="text-2xl font-semibold mb-4 text-green-300">Contact</h3>
+        <p class="text-gray-300 mb-4">
+          Feel free to reach out via email or connect on LinkedIn!
+        </p>
+        <p>
+          Email:
+          <a
+            href="mailto:tannukumariysn@gmail.com"
+            class="text-green-400 hover:underline"
+            >tannukumariysn@gmail.com</a
+          >
+        </p>
+        <p>
+          LinkedIn:
+          <a
+            href="https://linkedin.com/in/tannu-kumari-australia"
+            class="text-green-400 hover:underline"
+            target="_blank"
+            >Tannu Kumari</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer class="py-4 text-center text-sm text-gray-500">
+      &copy; 2025 Tannu Kumari. All rights reserved.
+    </footer>
+
+    <script>
+      const text = "Hi, I'm Tannu Kumari";
+      let i = 0;
+      const speed = 70;
+      const typedText = document.getElementById("typed-text");
+
+      function typeWriter() {
+        if (i < text.length) {
+          typedText.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        } else {
+          typedText.classList.remove("typing");
+        }
+      }
+
+      window.onload = typeWriter;
+    </script>
+  </body>
+</html>
