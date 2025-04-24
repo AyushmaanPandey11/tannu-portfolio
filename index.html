@@ -9,8 +9,88 @@
       rel="stylesheet"
     />
     <style>
+      :root {
+        /* Default to dark mode */
+        --bg-primary: #1f2937; /* bg-gray-900 */
+        --bg-secondary: #374151; /* bg-gray-800 */
+        --text-primary: #e5e7eb; /* text-gray-200 */
+        --text-secondary: #d1d5db; /* text-gray-300 */
+        --text-tertiary: #9ca3af; /* text-gray-400 */
+        --text-heading: #86efac; /* text-green-300 */
+        --text-subheading: #4ade80; /* text-green-200 */
+        --text-accent: #4ade80; /* text-green-400 */
+        --btn-bg: #16a34a; /* bg-green-600 */
+        --btn-bg-hover: #15803d; /* bg-green-700 */
+        --border-accent: #4ade80; /* border-green-400 */
+      }
+
+      /* Light mode */
+      [data-theme="light"] {
+        --bg-primary: #f3f4f6; /* bg-gray-100 */
+        --bg-secondary: #e5e7eb; /* bg-gray-200 */
+        --text-primary: #1f2937; /* text-gray-900 */
+        --text-secondary: #374151; /* text-gray-800 */
+        --text-tertiary: #6b7280; /* text-gray-500 */
+        --text-heading: #15803d; /* darker green for light mode */
+        --text-subheading: #16a34a; /* darker green for light mode */
+        --text-accent: #16a34a; /* darker green for light mode */
+        --btn-bg: #16a34a; /* bg-green-600 */
+        --btn-bg-hover: #15803d; /* bg-green-700 */
+        --border-accent: #16a34a; /* border-green-400 adjusted for light mode */
+      }
+
       html {
         scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+      }
+
+      header {
+        background-color: var(--bg-secondary);
+        opacity: 90%;
+      }
+
+      .bg-gray-800 {
+        background-color: var(--bg-secondary);
+      }
+
+      .text-gray-200 {
+        color: var(--text-primary);
+      }
+
+      .text-gray-300 {
+        color: var(--text-secondary);
+      }
+
+      .text-gray-400 {
+        color: var(--text-tertiary);
+      }
+
+      .text-green-300 {
+        color: var(--text-heading);
+      }
+
+      .text-green-200 {
+        color: var(--text-subheading);
+      }
+
+      .text-green-400 {
+        color: var(--text-accent);
+      }
+
+      .bg-green-600 {
+        background-color: var(--btn-bg);
+      }
+
+      .bg-green-600:hover {
+        background-color: var(--btn-bg-hover);
+      }
+
+      .border-green-400 {
+        border-color: var(--border-accent);
       }
 
       .typing::after {
@@ -27,24 +107,34 @@
           opacity: 0;
         }
       }
+
+      /* Theme toggle button styles */
+      .theme-toggle {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .theme-toggle svg {
+        width: 24px;
+        height: 24px;
+      }
     </style>
   </head>
-  <body class="bg-gray-900 text-gray-200 scroll-smooth">
+  <body class="scroll-smooth">
     <!-- Navbar -->
-    <header
-      class="fixed w-full bg-gray-800 bg-opacity-95 backdrop-blur shadow-sm z-10"
-    >
+    <header class="fixed w-full bg-opacity-90 backdrop-blur shadow-sm z-50">
       <div
         class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"
       >
         <div class="flex items-center gap-3">
-          <h1 class="text-2xl font-semibold text-green-400 mr-3">
+          <h1 class="text-2xl font-semibold text-green-400 xs:-mr-7">
             Tannu Kumari
           </h1>
           <a
             href="https://linkedin.com/in/tannu-kumari-australia"
             target="_blank"
-            class="text-white hover:text-green-300"
+            class="text-blue-500"
             aria-label="LinkedIn"
           >
             <svg
@@ -60,44 +150,72 @@
           </a>
         </div>
 
-        <nav class="space-x-3 text-base">
-          <a
-            href="#about"
-            class="hover:cursor-pointer text-xl hover:text-green-400"
-            >About</a
-          >
-          <a
-            href="#experience"
-            class="hover:cursor-pointer text-xl hover:text-green-400"
-            >Experience</a
-          >
-          <a
-            href="#education"
-            class="hover:cursor-pointer text-xl hover:text-green-400"
-            >Education</a
-          >
-          <a
-            href="#skills"
-            class="hover:cursor-pointer text-xl hover:text-green-400"
-            >Skills</a
-          >
-          <a
-            href="#resume"
-            class="hover:cursor-pointer text-xl hover:text-green-400"
-            >Resume</a
-          >
-          <a
-            href="#contact"
-            class="hover:cursor-pointer text-xl hover:text-green-400"
-            >Contact</a
-          >
-        </nav>
+        <div class="flex items-center gap-3">
+          <nav class="space-x-3 text-base">
+            <a
+              href="#about"
+              class="hover:cursor-pointer text-xl hover:text-green-400"
+              >About</a
+            >
+            <a
+              href="#experience"
+              class="hover:cursor-pointer text-xl hover:text-green-400"
+              >Experience</a
+            >
+            <a
+              href="#education"
+              class="hover:cursor-pointer text-xl hover:text-green-400"
+              >Education</a
+            >
+            <a
+              href="#skills"
+              class="hover:cursor-pointer text-xl hover:text-green-400"
+              >Skills</a
+            >
+            <a
+              href="#resume"
+              class="hover:cursor-pointer text-xl hover:text-green-400"
+              >Resume</a
+            >
+            <a
+              href="#contact"
+              class="hover:cursor-pointer text-xl hover:text-green-400"
+              >Contact</a
+            >
+          </nav>
+          <!-- Theme Toggle Button -->
+          <div class="theme-toggle" onclick="toggleTheme()">
+            <svg
+              id="theme-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <!-- Sun icon (for light mode) -->
+              <path
+                id="sun-icon"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="hidden"
+              />
+              <!-- Moon icon (for dark mode) -->
+              <path
+                id="moon-icon"
+                d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </header>
 
-    <main class="">
+    <main>
       <!-- Hero Section -->
-      <section class="relative py-28 bg-gray-800 overflow-hidden">
+      <section class="relative pt-24 py-28 bg-gray-800 overflow-hidden">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
           <img
@@ -274,10 +392,48 @@
     </main>
 
     <footer class="py-4 text-center text-sm text-gray-500">
-      &copy; 2025 Tannu Kumari. All rights reserved.
+      © 2025 Tannu Kumari. All rights reserved.
     </footer>
 
     <script>
+      // Theme toggle functionality
+      const toggleTheme = () => {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        // Toggle icon visibility
+        const sunIcon = document.getElementById("sun-icon");
+        const moonIcon = document.getElementById("moon-icon");
+        if (newTheme === "light") {
+          sunIcon.classList.remove("hidden");
+          moonIcon.classList.add("hidden");
+        } else {
+          sunIcon.classList.add("hidden");
+          moonIcon.classList.remove("hidden");
+        }
+      };
+
+      // Apply saved theme on load
+      window.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Set initial icon visibility
+        const sunIcon = document.getElementById("sun-icon");
+        const moonIcon = document.getElementById("moon-icon");
+        if (savedTheme === "light") {
+          sunIcon.classList.remove("hidden");
+          moonIcon.classList.add("hidden");
+        } else {
+          sunIcon.classList.add("hidden");
+          moonIcon.classList.remove("hidden");
+        }
+      });
+
+      // Typing effect
       const text = "Hi, I'm Tannu Kumari";
       let i = 0;
       const speed = 80;
@@ -293,7 +449,9 @@
         }
       }
 
-      window.onload = typeWriter;
+      window.onload = () => {
+        typeWriter();
+      };
     </script>
   </body>
 </html>
